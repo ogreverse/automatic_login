@@ -59,3 +59,13 @@ export GITHUB_FOO_USERNAME="user_name"
 export GITHUB_FOO_PASSWORD="PasSWord"
 ```
 のようになる。
+
+# 使い方 (twilioログインの場合)
+awsと使い方は同じ。
+
+環境変数は
+```
+export TWILIO_FOO_USERNAME="user_name"
+export TWILIO_FOO_PASSWORD="PasSWord"
+```
+のようになる。
