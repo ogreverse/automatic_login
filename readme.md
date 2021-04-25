@@ -14,9 +14,14 @@ $ python3 --version
 ```
 入っていない場合はインストールしておく。
 
+## seleniumインストール
+```
+$ pip3 install selenium
+```
+
 ## chromedriverインストール
 ```
-$ brew cask install chromedriver
+$ brew install chromedriver --cask
 ```
 
 ---
