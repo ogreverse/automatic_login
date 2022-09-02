@@ -20,15 +20,15 @@ WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
 
 # Emailアドレス入力
 print(email)
-d.find_element_by_id('email').send_keys(email)
-nextBtn = d.find_element_by_xpath('//*[@id="content"]/div[2]/div/form/div[2]/button')
+d.find_element('id', 'email').send_keys(email)
+nextBtn = d.find_element('xpath', '//*[@id="content"]/div[2]/div/form/div[2]/button')
 nextBtn.click()
 
 # ページ遷移の待機
 time.sleep(1)
 
 # パスワード入力、ログイン
-element = d.find_element_by_id('password').send_keys(password)
+element = d.find_element('id', 'password').send_keys(password)
 
-logInBtn = d.find_element_by_id('login')
+logInBtn = d.find_element('id', 'login')
 logInBtn.click()

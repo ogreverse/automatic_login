@@ -19,9 +19,10 @@ d.get('https://{0}.signin.aws.amazon.com/console'.format(account))
 WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
 
 print(username)
-d.find_element_by_id('username').send_keys(username)
-d.find_element_by_id('password').send_keys(password)
-signInBtn = d.find_element_by_id('signin_button')
+d.find_element('id', 'username').send_keys(username)
+d.find_element('id', 'password').send_keys(password)
+signInBtn = d.find_element('id', 'signin_button')
 signInBtn.click()
 
 d.maximize_window()
+

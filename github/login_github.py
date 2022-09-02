@@ -18,9 +18,9 @@ d.get('https://github.com/login')
 WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
 
 print(username)
-d.find_element_by_id('login_field').send_keys(username)
-d.find_element_by_id('password').send_keys(password)
-signInBtn = d.find_element_by_name('commit')
+d.find_element('id', 'login_field').send_keys(username)
+d.find_element('id', 'password').send_keys(password)
+signInBtn = d.find_element('name', 'commit')
 signInBtn.click()
 
 d.maximize_window()
