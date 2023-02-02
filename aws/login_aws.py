@@ -2,6 +2,7 @@
 #-*- coding: utf-8 -*-
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
@@ -13,7 +14,9 @@ username = os.getenv('AWS_{0}_USERNAME'.format(args[1]))
 password = os.getenv('AWS_{0}_PASSWORD'.format(args[1]))
 timeout_sec = 15
 
-d = webdriver.Chrome("chromedriver")
+options = Options()
+options.add_experimental_option('detach', True)
+d = webdriver.Chrome("chromedriver", options=options)
 d.get('https://{0}.signin.aws.amazon.com/console'.format(account))
 
 WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
