@@ -40,7 +40,7 @@ $ brew install chromedriver --cask
 ```
 (e.g.)
 cd `dirname $0`
-./login_aws.py SERVICE
+./login_aws.py FOO
 exit
 ```
 
