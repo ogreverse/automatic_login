@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
 import os
 import sys
 
@@ -16,7 +17,8 @@ timeout_sec = 15
 
 options = Options()
 options.add_experimental_option('detach', True)
-d = webdriver.Chrome("chromedriver", options=options)
+service = Service(executable_path="chromedriver")
+d = webdriver.Chrome(options=options, service=service)
 d.get('https://{0}.signin.aws.amazon.com/console'.format(account))
 
 WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
