@@ -1,4 +1,9 @@
+# 注意
+
+※ Selenium から PlayWright に移行した[Automatic Login V2](https://github.com/ogreverse/automatic_login_v2) があります。
+
 # 用途
+
 複数アカウントへ同時ログインしたいサービス(例えばawsやgithub)に簡単にログインするスクリプト。
 
 # 注意事項
