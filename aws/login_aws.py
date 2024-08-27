@@ -24,10 +24,15 @@ d.get('https://{0}.signin.aws.amazon.com/console'.format(account))
 WebDriverWait(d, timeout_sec).until(EC.presence_of_all_elements_located)
 
 print(username)
+# ユーザー名フィールドが表示されるまで待機
+WebDriverWait(d, timeout_sec).until(EC.presence_of_element_located(('id', 'username')))
 d.find_element('id', 'username').send_keys(username)
+# パスワードフィールドが表示されるまで待機
+WebDriverWait(d, timeout_sec).until(EC.presence_of_element_located(('id', 'password')))
 d.find_element('id', 'password').send_keys(password)
+# サインインボタンが表示されるまで待機
+WebDriverWait(d, timeout_sec).until(EC.element_to_be_clickable(('id', 'signin_button')))
 signInBtn = d.find_element('id', 'signin_button')
 signInBtn.click()
-
 d.maximize_window()
 
